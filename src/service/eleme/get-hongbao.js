@@ -47,7 +47,7 @@ module.exports = async (req, res) => {
       return response(99, '已领取到最佳前一个红包。下一个是最大红包，请手动打开红包链接领取', {type});
     }
 
-    const cookie = cookies[index++];
+    let cookie = cookies[index++];
     if (!cookie) {
       // 传过来的 cookie 不够用
       return response(4, '请求饿了么服务器失败，请重试。如果重试仍然不行，请换一个饿了么链接再来', {type});

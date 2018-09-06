@@ -8,7 +8,7 @@ const meituan = require('../service/meituan/get-hongbao');
 router.post('/', async (req, res, next) => {
   const startTime = Date.now();
   try {
-    let {url, mobile, limit, application, cookies} = req.body;
+    let {url, mobile, limit, application = 1, cookies} = req.body;
     if (typeof cookies === 'string') {
       req.body.cookies = JSON.parse(cookies);
     }
